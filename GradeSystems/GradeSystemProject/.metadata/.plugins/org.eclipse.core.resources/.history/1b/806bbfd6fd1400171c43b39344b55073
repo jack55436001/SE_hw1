@@ -1,0 +1,116 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class GradeSystemsTest {
+	GradeSystems gs = null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化GradeSystemsTest
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建並初始化GradeSystems,,並將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:GradesTest.setUp()   初始化GradesTest
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		gs = new GradeSystems();
+	    System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testShowGrade1() {
+		gs.showGrade(955002056);
+		String ans = "Lab1: 88\nLab2: 92\nLab3: 88\nmid-term: 98\nfinal exam: 91\ntotal grade: 93\n";
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testShowGrade2() {
+		gs.showGrade(965002044);
+		String ans = "Lab1: 85\nLab2: 86\nLab3: 80\nmid-term: 81\nfinal exam: 88\ntotal grade: 85\n";
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testShowRank1(){
+		gs.showRank(955002056);
+		String ans = "Rank: 9\n";
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testShowRank2(){
+		gs.showRank(965002044);
+		String ans = "Rank: 58\n";
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testContainsID1(){
+		assertEquals(true,gs.containsID(955002056));
+	}
+	@Test
+	public void testContainsID2(){
+		assertEquals(false,gs.containsID(103062319));
+	}
+	@Test
+	public void testUpdateWeights1(){
+		gs.updateWeights(new int[]{20,20,20,20,20});
+		Assert.assertArrayEquals(new float[]{0.20f,0.20f,0.20f,0.20f,0.20f},gs.weights,0);
+	}
+	@Test
+	public void testUpdateWeights2(){
+		gs.updateWeights(new int[]{30,30,20,10,10});
+		Assert.assertArrayEquals(new float[]{0.30f,0.30f,0.20f,0.10f,0.10f},gs.weights,0);
+	}
+	@Test
+	public void testShowOldWeights1(){
+		gs.showOldWeights();
+		String ans = "---Old Weights(%)---\nLab1: 10%\nLab2: 10%\nLab3: 10%\nmid-term: 30%\nfinal exam: 40%\n";
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testShowOldWeights2(){
+		gs.showOldWeights();
+		String ans = "---Old Weights(%)---\nLab1: 10%\nLab2: 10%\nLab3: 10%\nmid-term: 30%\nfinal exam: 40%\n";
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testFindNameByID1(){
+		assertEquals("商揚夏",gs.findNameByID(965002044));
+	}
+	@Test
+	public void testFindNameByID2(){
+		assertEquals(null,gs.findNameByID(103062319));
+	}
+	@Test
+	public void testShowAverage1(){
+		gs.showAverage();
+		String ans = "Average:\nLab1 :90.32\nLab2 :87.71\nLab3 :89.10\nmidTerm :89.52\nfinalExam :89.73\ntotalGrade :89.57\n";		
+		assertEquals(ans,outContent.toString());
+	}
+	@Test
+	public void testShowAverage2(){
+		gs.showAverage();
+		String ans = "Average:\nLab1 :90.32\nLab2 :87.71\nLab3 :89.10\nmidTerm :89.52\nfinalExam :89.73\ntotalGrade :89.57\n";		
+		assertEquals(ans,outContent.toString());
+	}
+	
+	
+}

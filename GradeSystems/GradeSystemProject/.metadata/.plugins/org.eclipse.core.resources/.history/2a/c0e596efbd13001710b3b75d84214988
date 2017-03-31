@@ -1,0 +1,132 @@
+
+public class Grades {
+	private int id;
+	private String name;
+	private int lab1;
+	private int lab2;
+	private int lab3;
+	private int midTerm;
+	private int finalExam;
+	private int totalGrade;
+	
+	/* method Grades  ----------------------------------------------------------------------------------                                                                                                    
+	* 個人成績的建構子
+	*
+	* @param id,name,lab1,lab2,lab3,midTerm,finalExam 個人資料 weights 比重 
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.儲存相對應的個人資料
+	*2.將比重傳入updateTotalGrade(weights),計算總成績
+	*
+	* Time estimate : O (1)
+	* Example: Grades gd = new Grades(103062319,Jsharp,80,80,80,80,80,[0.2,0.2,0.2,0.2,0.2]) 創建一位學生個人資料
+	----------------------------------------------------------------------------------------------------------*/
+
+	public Grades(int id, String name, int lab1, int lab2, int lab3, int midTerm, int finalExam, float[] weights){
+		this.id = id;
+		this.name = name;
+		this.lab1 = lab1;
+		this.lab2 = lab2;
+		this.lab3 = lab3;
+		this.midTerm = midTerm;
+		this.finalExam = finalExam;
+		updateTotalGrade(weights);
+	}
+	
+	/* method  updateTotalGrade----------------------------------------------------------------------------------                                                                                                    
+	* 更新總成績
+	*
+	* @param weights 成績比重
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.利用比重計算加權後的總成績
+	*2.將計算完的總成績做四捨五入,更新至private totalGrade
+    *
+	* Time estimate : O (1)
+	* Example: updateTotalGrade([0.2,0.2,0.2,0.2,0.2])  更新權重重新計算totalGrade
+	----------------------------------------------------------------------------------------------------------*/
+	public void updateTotalGrade(float[] weights){
+		float total = lab1*weights[0] + lab2*weights[1] + lab3*weights[2] + midTerm*weights[3] + finalExam*weights[4];;
+		this.totalGrade =  Math.round(total);
+	}
+	
+	/* method  getID----------------------------------------------------------------------------------                                                                                                    
+	* 取得個人學號
+	*
+	* @param 無
+	* @return id 個人學號
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.回傳private id
+    *
+	* Time estimate : O (1)
+	* Example: id = grade.getID() 藉由grade這個物件,回傳個人學號
+	----------------------------------------------------------------------------------------------------------*/
+	public int getID(){
+		return id;
+	}
+	
+	/* method  getGrades----------------------------------------------------------------------------------                                                                                                    
+	* 將個人成績包成array並回傳
+	*
+	* @param 無
+	* @return g 個人成績的array
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.創建一個array儲存個人所有成績
+	*2.回傳該array
+    *
+	* Time estimate : O (1)
+	* Example: g = grade.getGrades() 藉由grade這個物件,回傳個人所有成績
+	----------------------------------------------------------------------------------------------------------*/
+	public int[] getGrades(){
+		int[] g = {lab1,lab2,lab3,midTerm,finalExam};
+		return g;
+	}
+	
+	/* method  getTotalGrade----------------------------------------------------------------------------------                                                                                                    
+	* 取得個人加權總成績
+	*
+	* @param 無
+	* @return totalGrade 個人加權總成績
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.回傳總成績
+    *
+	* Time estimate : O (1)
+	* Example: totalGrade = grade.getTotalGrade() 藉由grade這個物件,回傳個人加權總成績
+	----------------------------------------------------------------------------------------------------------*/
+	public int getTotalGrade(){
+		return totalGrade;
+	}
+	
+	/* method  getName----------------------------------------------------------------------------------                                                                                                    
+	* 取得個人名字
+	*
+	* @param 無
+	* @return name 個人名字
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.回傳個人名字
+    *
+	* Time estimate : O (1)
+	* Example: name = grade.getName() 藉由grade這個物件,回傳個人名字
+	----------------------------------------------------------------------------------------------------------*/
+	public String getName(){
+		return name;
+	}
+}

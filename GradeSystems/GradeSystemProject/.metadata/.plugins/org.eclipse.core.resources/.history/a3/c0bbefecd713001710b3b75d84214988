@@ -1,0 +1,48 @@
+
+public class IdException extends Exception{
+
+	/**
+	 * 
+	 */
+	private int id;
+	private static final long serialVersionUID = 1L;
+	
+	/* method  IdException----------------------------------------------------------------------------------                                                                                                    
+	* IdException建構子
+	*
+	* @param id 學號
+	* @return 無
+	*
+	* @throws 無
+	*		  
+	*Pseudo code:
+	*1.儲存id
+    *
+	* Time estimate : O (1)
+	* Example: UI.promptCommand(103062319) 回傳false
+	----------------------------------------------------------------------------------------------------------*/
+	public IdException(int id){
+		this.id=id;
+	}
+	
+	/* method  promptCommand----------------------------------------------------------------------------------                                                                                                    
+	* 顯示可輸入的指令,並呼叫適當的method處理該指令
+	*
+	* @param id 學號
+	* @return boolean 是否離開系統
+	*
+	* @throws CommandException-當輸入非螢幕指定的指令
+	*		  
+	*Pseudo code:
+	*1.顯示可輸入之指令
+	*2.使用者輸入欲執行項目之相對指令,呼叫相對應的method
+	*3.回傳boolean是否離去
+    *
+	* Time estimate : O (1)
+	* Example: UI.promptCommand(103062319) 回傳false
+	----------------------------------------------------------------------------------------------------------*/
+	public void IdNotFound(){
+		System.out.println("Id "+id+" not found");
+	}
+
+}

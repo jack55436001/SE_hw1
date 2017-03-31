@@ -1,0 +1,93 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class IdExceptionTest {
+	IdException ie,ie2= null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化IdExceptionTest,並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建兩個不同的IdException,並將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.setUp()   初始化IdExceptionTest
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		ie = new IdException(103062319);
+		ie2 = new IdException(103062318);
+		System.setOut(new PrintStream(outContent));
+	}
+
+	/* method  tearDown----------------------------------------------------------------------------------                                                                                                    
+	* 關閉console output
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將console output設為null
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.tearDown()   測試完畢關閉console output
+	----------------------------------------------------------------------------------------------------------*/
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	/* method  testIdNotFound1----------------------------------------------------------------------------------                                                                                                    
+	* 測試IdNotFound
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫IdNotFound(),利用assertEquals比較兩者是否相同
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.testIdNotFound1()   測試IdNotFound
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testIdNotFound1() {
+		ie.IdNotFound();
+		assertEquals("Id 103062319 not found\n",outContent.toString());
+	}
+	
+	/* method  testIdNotFound2----------------------------------------------------------------------------------                                                                                                    
+	* 測試IdNotFound
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫IdNotFound(),利用assertEquals比較兩者是否相同
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.testIdNotFound2()   測試IdNotFound
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testIdNotFound2() {
+		ie2.IdNotFound();
+		assertEquals("Id 103062318 not found\n",outContent.toString());
+	}
+}

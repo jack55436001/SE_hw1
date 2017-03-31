@@ -1,0 +1,51 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ReweightExceptionTest {
+	ReweightException re = null;
+	ReweightException re2 =null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化,創建兩種ReweightException
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫IdNotFound(),利用assertEquals比較兩者是否相同
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.testIdNotFound2()   測試IdNotFound
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		re = new ReweightException(0,120);
+		re2 = new ReweightException(1,80);
+		System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testErrorDetect1() {
+		re.ErrorDetect();
+		assertEquals("120 should be 0 to 100.\n",outContent.toString());
+	}
+	@Test
+	public void testErrorDetect2() {
+		re2.ErrorDetect();
+		assertEquals("The sum over all weights should be 100.\n",outContent.toString());
+	}
+}

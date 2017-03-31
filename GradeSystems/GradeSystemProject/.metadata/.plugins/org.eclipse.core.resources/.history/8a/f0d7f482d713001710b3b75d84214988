@@ -1,0 +1,79 @@
+
+public class GradeSystemProject {
+	private static UI ui;
+	
+	/* method  main----------------------------------------------------------------------------------                                                                                                    
+	* 程式開始執行,重複操作指令直到使用者選擇離開
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.利用迴圈取得使用者正確學號
+	*2.利用另一個迴圈呼叫promptCommand()處理指令直到使用者選擇離開
+    *
+	* Time estimate : O (1)
+	* Example: 無
+	----------------------------------------------------------------------------------------------------------*/
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		ui = new UI();
+		
+		while(true){
+			int id=login();
+			if(id==-1)return;
+			else if(id==0);
+			else{
+				ui.showWelcomeMsg(id);
+				while(true){
+					if(!ui.promptCommand(id))
+						break;
+					System.out.println();
+				}
+			}
+		}
+	}
+	
+	/* method  login----------------------------------------------------------------------------------                                                                                                    
+	* 取得使用者學號並判斷是否有效
+	*
+	* @param 無
+	* @return id 學號(若為0,-1為錯誤代碼)
+	*
+	* @throws IdException-當學號不存在於系統中,throw	 IdException
+	* 		  NumberFormatException-當使用者輸入英文做為學號時,throw NumberFormatException
+	*	
+	*Pseudo code:
+	*1.利用promptID()取得學號
+	*2.判斷學號是否存在於系統
+	*3.回傳學號或錯誤代碼
+    *
+	* Time estimate : O (1)
+	* Example: 無
+	----------------------------------------------------------------------------------------------------------*/
+	public static int login()
+	{
+		try{
+			String id_string = ui.promptID();
+			if(id_string.equals("Q")){
+				ui.showFinishMsg();
+				return -1;
+			}
+			int id = Integer.parseInt(id_string);
+			if(!ui.checkID(id)){
+				throw new IdException(id);
+			}
+			return id;
+			}
+		catch(IdException e){
+			e.IdNotFound();
+			return 0;
+		}
+		catch(NumberFormatException e){
+			System.out.println("學號只包括數字(Ex:962001044)");
+			return 0;
+		}
+	}
+}

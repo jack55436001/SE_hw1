@@ -1,0 +1,116 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class IntegrationTest { 
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private static int next_id;
+	
+	/* method  setBefore----------------------------------------------------------------------------------                                                                                                    
+	* 初始化next_id,用於切換模擬使用者input
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將next_id初始化為0
+    *
+	* Time estimate : O (1)
+	* Example:ui.setBefore()   初始化next_id
+	----------------------------------------------------------------------------------------------------------*/
+	@BeforeClass
+	public static void setBefore() throws Exception{
+		next_id = 0;
+	}
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化UI,setOut content做之後console比對,setIn content用於模擬使用者輸入
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.利用counter選擇需要的test input,並且setIn test input
+	*2.將outContent set完畢
+	*3.創建一個UI
+    *
+	* Time estimate : O (1)
+	* Example:ui.set()   創建UI,設定相關input output參數
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		String input = "";
+		if(next_id==0)	input="962001044\nG\nE\nE\nQ\n";
+		else if(next_id==1)	input = "962001044\nR\nE\nE\nQ\n";
+		else if(next_id==2)	input = "962001044\nA\nE\nE\nQ\n";
+		else if(next_id==3)	input = "962001044\nW\n20\n20\n20\n20\n20\nY\nE\nG\nE\nE\nQ\n";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+	    System.setIn(in);
+	    System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testGrade() {
+		GradeSystemProject.main(null);
+		assertEquals("請輸入ID 或 輸入Q離開：\n歡迎 凌宗廷\n輸入指令\n1) G 顯示成績 (Grade)\n2) R "
+				+ "顯示排名 (Rank)\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 "
+				+ "(Exit)\nLab1: 87\nLab2: 86\nLab3: 98\nmid-term: 88\nfinal exam: 87\n"
+				+ "total grade: 88\n請輸入 Ｅ 回到主選單\n\n輸入指令\n1) G 顯示成績 (Grade)\n2) "
+				+ "R 顯示排名 (Rank)\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) "
+				+ "E 離開選單 (Exit)\n請輸入ID 或 輸入Q離開：\n謝謝使用本系統\n",outContent.toString());
+		next_id++;
+	}
+	@Test
+	public void testRank() {
+		GradeSystemProject.main(null);
+		assertEquals("請輸入ID 或 輸入Q離開：\n歡迎 凌宗廷\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 "
+				+ "(Rank)\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\nRank: "
+				+ "37\n請輸入 Ｅ 回到主選單\n\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)\n3) A "
+				+ "顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\n請輸入ID 或 輸入Q離開："
+				+ "\n謝謝使用本系統\n",outContent.toString());
+		next_id++;
+	}
+	@Test
+	public void testAverage() {
+		GradeSystemProject.main(null);
+		assertEquals("請輸入ID 或 輸入Q離開：\n歡迎 凌宗廷\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 "
+				+ "(Rank)\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\nAverage:"
+				+ "\nLab1 :90.32\nLab2 :87.71\nLab3 :89.10\nmidTerm :89.52\nfinalExam :89.73\ntotal"
+				+ "Grade :89.57\n請輸入 Ｅ 回到主選單\n\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)"
+				+ "\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\n請輸入ID 或"
+				+ " 輸入Q離開：\n謝謝使用本系統\n",outContent.toString());
+		next_id++;
+	}
+	@Test
+	public void testReweights() {
+		GradeSystemProject.main(null);
+		assertEquals("請輸入ID 或 輸入Q離開：\n歡迎 凌宗廷\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)\n3) "
+				+ "A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\n---Old Weights(%)---\nLab1: "
+				+ "10%\nLab2: 10%\nLab3: 10%\nmid-term: 30%\nfinal exam: 40%\n---New Weights(%)---\nLab1: \nLab2: "
+				+ "\nLab3: \nmidTerm: \nfinalExam: \n---Confirm New Weights(%)---\nLab1: 20%\nLab2: 20%\nLab3: "
+				+ "20%\nmidTerm: 20%\nfinalExam: 20%\n以上正確嗎? Y (Yes) 或 N (No)\nWeights changed!\n請輸入 Ｅ "
+				+ "回到主選單\n\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)\n3) A 顯示平均 (Average)\n4) W "
+				+ "更新配分 (Weight)\n5) E 離開選單 (Exit)\nLab1: 87\nLab2: 86\nLab3: 98\nmid-term: 88\nfinal exam: "
+				+ "87\ntotal grade: 89\n請輸入 Ｅ 回到主選單\n\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)\n3) "
+				+ "A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\n請輸入ID 或 輸入Q離開："
+				+ "\n謝謝使用本系統\n",outContent.toString());
+		next_id++;
+	}
+}

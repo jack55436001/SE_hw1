@@ -1,0 +1,77 @@
+
+public class Grades {
+	private int id;
+	private String name;
+	private int lab1;
+	private int lab2;
+	private int lab3;
+	private int midTerm;
+	private int finalExam;
+	private int totalGrade;
+	
+	/* method Grades  ----------------------------------------------------------------------------------                                                                                                    
+	* 個人成績的建構子
+	*
+	* @param id,name,lab1,lab2,lab3,midTerm,finalExam 個人資料 weights 比重 
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.
+	*
+	*
+    *
+	* Time estimate : O (1)
+	* Example: this.name = name
+	----------------------------------------------------------------------------------------------------------*/
+
+	public Grades(int id, String name, int lab1, int lab2, int lab3, int midTerm, int finalExam, float[] weights){
+		this.id = id;
+		this.name = name;
+		this.lab1 = lab1;
+		this.lab2 = lab2;
+		this.lab3 = lab3;
+		this.midTerm = midTerm;
+		this.finalExam = finalExam;
+		updateTotalGrade(weights);
+	}
+	
+	/* method  ----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param 
+	* @return 
+	*
+	* @throws
+	*	
+	*Pseudo code:
+	*1.
+	*2.
+	*3.
+    *
+	* Time estimate : O (n)
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	public void updateTotalGrade(float[] weights){
+		float total = lab1*weights[0] + lab2*weights[1] + lab3*weights[2] + midTerm*weights[3] + finalExam*weights[4];;
+		this.totalGrade =  Math.round(total);
+	}
+	
+	public int getID(){
+		return id;
+	}
+	
+	public int[] getGrades(){
+		int[] g = {lab1,lab2,lab3,midTerm,finalExam};
+		return g;
+	}
+	
+	public int getTotalGrade(){
+		return totalGrade;
+	}
+	
+	public String getName(){
+		return name;
+	}
+}

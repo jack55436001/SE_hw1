@@ -1,0 +1,307 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class UITest {
+	private UI ui=null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private static int next_id;
+	
+	/* method  setBefore----------------------------------------------------------------------------------                                                                                                    
+	* 初始化counter,用於切換模擬使用者input
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將counter初始化為0
+    *
+	* Time estimate : O (1)
+	* Example:ui.setBefore()   初始化counter
+	----------------------------------------------------------------------------------------------------------*/
+	@BeforeClass
+	public static void setBefore() throws Exception{
+		next_id = 0;
+	}
+	
+	/* method  set----------------------------------------------------------------------------------                                                                                                    
+	* 初始化UI,setOut content做之後console比對,setIn content用於模擬使用者輸入
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.利用counter選擇需要的test input,並且setIn test input
+	*2.將outContent set完畢
+	*3.創建一個UI
+    *
+	* Time estimate : O (1)
+	* Example:ui.set()   創建UI,設定相關input output參數
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void set() throws Exception{
+		String input="";
+		if(next_id==0)	input = "103062319";
+		else if(next_id==1)	input = "103062318";
+		else if(next_id==2)	input = "Q";
+		else if(next_id==3)	input = "962001051";
+		else if(next_id==4)	input = "G\nE";
+		else if(next_id==5)	input = "E";
+	    InputStream in = new ByteArrayInputStream(input.getBytes());
+	    System.setIn(in);
+	    System.setOut(new PrintStream(outContent));
+		ui = new UI();
+	}
+	
+	/* method  tearDown----------------------------------------------------------------------------------                                                                                                    
+	* 關閉console output
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將console output設為null
+    *
+	* Time estimate : O (1)
+	* Example:UITest.tearDown()   測試完畢關閉console output
+	----------------------------------------------------------------------------------------------------------*/
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	/* method  testCheckID1----------------------------------------------------------------------------------                                                                                                    
+	* 測試checkID是否如預期,存在之case
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫checkID(955002056),利用assertEquals比較預期true與實際checkID回傳有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testCheckID1()  測試testCheckID1
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testCheckID1() {
+		assertEquals(true,ui.checkID(955002056));
+	}
+	
+	/* method  testCheckID2----------------------------------------------------------------------------------                                                                                                    
+	* 測試checkID是否如預期,不存在之case
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫checkID(103062319),利用assertEquals比較預期false與實際checkID回傳有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testCheckID2()  測試testCheckID2
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testCheckID2() {
+		assertEquals(false,ui.checkID(103062319));
+	}
+	
+	/* method  testPromptID1----------------------------------------------------------------------------------                                                                                                    
+	* 測試PromptID是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫promptID(),使用setIn模擬使用者輸入,利用assertEquals比較預期回傳學號與實際promptID回傳有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testPromptID1()  測試testPromptID1
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testPromptID1() throws IOException{		
+	    assertEquals("103062319",ui.promptID());
+		next_id++;
+	}
+	
+	/* method  testPromptID2----------------------------------------------------------------------------------                                                                                                    
+	* 測試PromptID是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫promptID(),使用setIn模擬使用者輸入,利用assertEquals比較預期回傳學號與實際promptID回傳有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testPromptID2()  測試testPromptID2
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testPromptID2() {
+	    assertEquals("103062318",ui.promptID());
+		next_id++;
+	}
+	
+	/* method  testShowFinishMsg1----------------------------------------------------------------------------------                                                                                                    
+	* 測試showWelcomeMsg是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫showFinishMsg(),利用assertEquals比較預期與outContent.toString()有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testShowFinishMsg1()  測試testShowFinishMsg1
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testShowFinishMsg1() {
+		ui.showFinishMsg();
+		assertEquals("謝謝使用本系統\n",outContent.toString());
+	}
+	
+	/* method  testShowFinishMsg2----------------------------------------------------------------------------------                                                                                                    
+	* 測試showWelcomeMsg是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫showFinishMsg(),利用assertEquals比較預期與outContent.toString()有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testShowFinishMsg2()  測試testShowFinishMsg2
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testShowFinishMsg2() {
+		ui.showFinishMsg();
+		assertEquals("謝謝使用本系統\n",outContent.toString());
+	}
+	
+	/* method  testShowWelcomeMsg1----------------------------------------------------------------------------------                                                                                                    
+	* 測試955002056此學號下,showWelcomeMsg是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫showWelcomeMsg(955002056),利用assertEquals比較預期與outContent.toString()有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testShowWelcomeMsg1()  測試testShowWelcomeMsg1
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testShowWelcomeMsg1() {
+		ui.showWelcomeMsg(955002056);
+		assertEquals("歡迎 許文馨\n",outContent.toString());
+	}
+	
+	/* method  testShowWelcomeMsg2----------------------------------------------------------------------------------                                                                                                    
+	* 測試962001044此學號下,showWelcomeMsg是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫showWelcomeMsg(962001044),利用assertEquals比較預期與outContent.toString()有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testShowWelcomeMsg2()  測試testShowWelcomeMsg2
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testShowWelcomeMsg2() {
+		ui.showWelcomeMsg(962001044);
+		assertEquals("歡迎 凌宗廷\n",outContent.toString());
+	}
+	
+	@Test
+	public void testPromptCommand1(){
+		assertEquals(true,ui.promptCommand(955002056));
+		next_id++;
+	}
+	
+	@Test
+	public void testPromptCommand2(){
+		assertEquals(false,ui.promptCommand(962001051));
+		next_id++;
+	}
+	
+	@Test
+	public void testLogin1(){
+		assertEquals(-1,ui.login());
+	    next_id++;
+	}
+	@Test
+	public void testLogin2(){
+		assertEquals(962001051,ui.login());
+		next_id++;
+	}
+	/* method  testShowNewWeights1----------------------------------------------------------------------------------                                                                                                    
+	* 測試{20,20,20,20,20}此比重下,ShowNewWeights是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫showNewWeights(new int[]{20,20,20,20,20}),利用assertEquals比較預期與outContent.toString()有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testShowNewWeights1()  測試testShowNewWeights1
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testShowNewWeights1() {
+		ui.showNewWeights(new int[]{20,20,20,20,20});
+		assertEquals("---Confirm New Weights(%)---\nLab1: 20%\nLab2: 20%\nLab3: 20%\nmidTerm: 20%\nfinalExam: 20%\n",outContent.toString());
+	}
+	
+	/* method  testShowNewWeights2----------------------------------------------------------------------------------                                                                                                    
+	* 測試{10,10,10,10,60}此比重下,ShowNewWeights是否如預期
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫showNewWeights(new int[]{10,10,10,10,60}),利用assertEquals比較預期與outContent.toString()有無差別
+    *
+	* Time estimate : O (1)
+	* Example:UITest.testShowNewWeights2()  測試testShowNewWeights2
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testShowNewWeights2() {
+		ui.showNewWeights(new int[]{10,10,10,10,60});
+		assertEquals("---Confirm New Weights(%)---\nLab1: 10%\nLab2: 10%\nLab3: 10%\nmidTerm: 10%\nfinalExam: 60%\n",outContent.toString());
+	}
+}

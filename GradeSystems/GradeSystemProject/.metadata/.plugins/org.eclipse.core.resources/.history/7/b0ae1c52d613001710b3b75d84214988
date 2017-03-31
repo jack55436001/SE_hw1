@@ -1,0 +1,61 @@
+
+public class GradeSystemProject {
+	private static UI ui;
+	
+	/* method  main----------------------------------------------------------------------------------                                                                                                    
+	* 程式開始執行,重複操作指令直到使用者選擇離開
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.利用迴圈取得使用者正確學號
+	*2.利用另一個迴圈連續處理指令直到使用者離開
+    *
+	* Time estimate : O (1)
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		ui = new UI();
+		
+		while(true){
+			int id=login();
+			if(id==-1)return;
+			else if(id==0);
+			else{
+				ui.showWelcomeMsg(id);
+				while(true){
+					if(!ui.promptCommand(id))
+						break;
+					System.out.println();
+				}
+			}
+		}
+	}
+	public static int login()
+	{
+		try{
+			String id_string = ui.promptID();
+			if(id_string.equals("Q")){
+				ui.showFinishMsg();
+				return -1;
+			}
+			int id = Integer.parseInt(id_string);
+			if(!ui.checkID(id)){
+				throw new IdException(id);
+			}
+			return id;
+			}
+		catch(IdException e){
+			e.IdNotFound();
+			return 0;
+		}
+		catch(NumberFormatException e){
+			System.out.println("學號只包括數字(Ex:962001044)");
+			return 0;
+		}
+	}
+}

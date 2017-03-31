@@ -1,0 +1,50 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class IdExceptionTest {
+	IdException ie,ie2= null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化IdExceptionTest,並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建一個新的IdExceptionTest(),並將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.setUp()   初始化IdExceptionTest
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		ie = new IdException(103062319);
+		ie2 = new IdException(103062318);
+		System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testIdNotFound1() {
+		ie.IdNotFound();
+		assertEquals("Id 103062319 not found\n",outContent.toString());
+	}
+	@Test
+	public void testIdNotFound2() {
+		ie2.IdNotFound();
+		assertEquals("Id 103062318 not found\n",outContent.toString());
+	}
+}

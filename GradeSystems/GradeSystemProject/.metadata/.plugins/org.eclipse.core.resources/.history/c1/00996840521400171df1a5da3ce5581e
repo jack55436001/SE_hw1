@@ -1,0 +1,46 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class GradesTest {
+	Grades gd = null;
+	Grades gd2 = null;
+	@Before
+	public void setUp() throws Exception {
+		gd = new Grades(103062319, "JSharp", 30, 40, 50, 60, 70, new float[] { 0.2f, 0.2f, 0.2f, 0.2f, 0.2f });
+		gd2 = new Grades(103062320, "CSharp", 100, 100, 50, 60, 70, new float[] { 0.2f, 0.2f, 0.2f, 0.2f, 0.2f });
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+	
+	
+	@Test
+	public void getTotalGradeTest1() {
+		assertEquals(50,gd.getTotalGrade());
+	}
+	@Test
+	public void getTotalGradeTest2() {
+		assertEquals(76,gd2.getTotalGrade());
+	}
+
+	@Test
+	public void updateTotalGradeTest1() {
+		gd2.updateTotalGrade(new float[] {0.1f,0.1f,0.1f,0.1f,0.6f});
+		assertEquals(73,gd2.getTotalGrade());
+	}
+	@Test
+	public void updateTotalGradeTest2() {
+		gd2.updateTotalGrade(new float[] {0.1f,0.1f,0.1f,0.1f,0.6f});
+		assertEquals(73,gd2.getTotalGrade());
+	}
+	@Test
+	public int getID(){
+		
+	}
+	
+}

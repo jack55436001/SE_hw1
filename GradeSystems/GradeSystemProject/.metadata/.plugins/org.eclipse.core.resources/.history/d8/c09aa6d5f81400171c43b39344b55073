@@ -1,0 +1,93 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class CommandExceptionTest {
+	CommandException ce =null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化CommandException,並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建一個新的CommandException(),並將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:CommandExceptionTest.setUp()   初始化測試
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		ce =new CommandException();
+		System.setOut(new PrintStream(outContent));
+	}
+
+	/* method  tearDown----------------------------------------------------------------------------------                                                                                                    
+	* 關閉console output
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將console output設為null
+    *
+	* Time estimate : O (1)
+	* Example:CommandExceptionTest.tearDown()   測試完畢關閉console output
+	----------------------------------------------------------------------------------------------------------*/
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化CommandException,並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建一個新的CommandException(),並將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:CommandExceptionTest.setUp()   初始化測試
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testCommandError1() {
+		ce.CommandError();
+		assertEquals("Command Error(EX:若要顯示成績請輸入Ｇ)\n",outContent.toString());
+	}
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化CommandException,並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建一個新的CommandException(),並將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:CommandExceptionTest.setUp()   初始化測試
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testCommandError2() {
+		ce.CommandError();
+		assertEquals("Command Error(EX:若要顯示成績請輸入Ｇ)\n",outContent.toString());
+	}
+
+}

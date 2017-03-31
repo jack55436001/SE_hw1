@@ -1,0 +1,87 @@
+
+public class ReweightException extends Exception{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3L;
+	private int id;
+	private int percent;
+	
+	/* method  ReweightException----------------------------------------------------------------------------------                                                                                                    
+	* ReweightException建構子
+	*
+	* @param id 學號 percent 
+	* @return 
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O (1)
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	public ReweightException(int id, int percent){
+		super();
+		this.id = id;
+		this.percent = percent;
+	}
+	
+	/* method  ----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param 
+	* @return 
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O (1)
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	public void ErrorDetect(){
+		if(id==0)
+			outOfrange();
+		else
+			sumError();
+	}
+	
+	/* method  ----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param 
+	* @return 
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O (1)
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	private void outOfrange(){
+		System.out.println(percent+" should be 0 to 100.");
+	}
+	
+	/* method  ----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param 
+	* @return 
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O (1)
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	private void sumError(){
+		System.out.println("The sum over all weights should be 100.");
+	}
+}

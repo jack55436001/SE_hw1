@@ -1,0 +1,52 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ReweightExceptionTest {
+	ReweightException re = null;
+	ReweightException re2 =null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化,創建兩種ReweightException並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建re,re2分別使用不同參數
+	*2.將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:IdExceptionTest.setUp()   測試setUp
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		re = new ReweightException(0,120);
+		re2 = new ReweightException(1,80);
+		System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testErrorDetect1() {
+		re.ErrorDetect();
+		assertEquals("120 should be 0 to 100.\n",outContent.toString());
+	}
+	@Test
+	public void testErrorDetect2() {
+		re2.ErrorDetect();
+		assertEquals("The sum over all weights should be 100.\n",outContent.toString());
+	}
+}

@@ -1,0 +1,303 @@
+import java.util.*;
+import java.io.*;
+public class GradeSystems {
+	private List<Grades> gradeList = new ArrayList<>();
+	private float[] weights;
+	
+	/* method  GradeSystems()----------------------------------------------------------------------------------                                                                                                    
+	* 成績系統建構子
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws FileNotFoundException-找不到檔案,在螢幕顯示“找不到檔案”
+	*	
+	*Pseudo code:
+	*1.建造默認權重
+	*2.讀成績文字檔,一行代表一位學生,並傳入assignData()
+    *3.將該學生資料加入成績系統的list
+    *
+	* Time estimate : O (n)
+	* Example: gs = new GradeSystems() 建造成績系統
+	----------------------------------------------------------------------------------------------------------*/
+	public GradeSystems(){
+		 weights = new float[]{0.1f,0.1f,0.1f,0.3f,0.4f};
+		 File file = new File("./src/gradeinput.txt");
+		    try {
+		        Scanner sc = new Scanner(file);
+		        while (sc.hasNextLine()) {
+		            String s = sc.nextLine();
+		            gradeList.add(assignData(s));
+		        }
+		        sc.close();
+		    } 
+		    catch (FileNotFoundException e) {
+		        System.out.println("找不到檔案！");;
+		    }	
+	}
+	
+	/* method  assignData----------------------------------------------------------------------------------                                                                                                    
+	* 分解資料字串獲得各項資料並依據此資料創建grade回傳
+	*
+	* @param data 個人資料的字串
+	* @return Grades 個人資料
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.分解data字串取得各項資料
+    *2.利用各項資料創建grades並回傳
+    *
+	* Time estimate : O (1)
+	* Example: assignData("985002006 楊佳蓉 82 88 85 89 92") 回傳該字串創建之grades物件
+	----------------------------------------------------------------------------------------------------------*/        
+	private Grades assignData(String data){
+		String[] s = data.split(" ");
+		int id = Integer.parseInt(s[0]);
+		String name = s[1];
+		int lab1 = Integer.parseInt(s[2]);
+		int lab2 = Integer.parseInt(s[3]);
+		int lab3 = Integer.parseInt(s[4]);
+		int midTerm = Integer.parseInt(s[5]);
+		int finalExam = Integer.parseInt(s[6]);
+		return new Grades(id,name,lab1,lab2,lab3,midTerm,finalExam,weights);
+	}
+	
+	/* method  showGrade----------------------------------------------------------------------------------                                                                                                    
+	* 螢幕顯示該學號之各項成績
+	*
+	* @param id 個人學號
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.利用迴圈尋找成績系統list中學號相同者
+    *2.螢幕印出該學號之各項成績
+    *
+	* Time estimate : O (n)
+	* Example: showGrade(103062319) 螢幕顯示各項成績
+	----------------------------------------------------------------------------------------------------------*/
+	public void showGrade(int id){ 
+		for (int i = 0; i < gradeList.size(); i++) {
+			if(gradeList.get(i).getID() == id){
+				int[] g = gradeList.get(i).getGrades();
+				System.out.println("Lab1: "+g[0]+(g[0]>=60?"":"*"));
+				System.out.println("Lab2: "+g[1]+(g[1]>=60?"":"*"));
+				System.out.println("Lab3: "+g[2]+(g[2]>=60?"":"*"));
+				System.out.println("mid-term: "+g[3]+(g[3]>=60?"":"*"));
+				System.out.println("final exam: "+g[4]+(g[4]>=60?"":"*"));
+				System.out.println("total grade: "+gradeList.get(i).getTotalGrade()+(gradeList.get(i).getTotalGrade()>=60?"":"*"));
+				break;
+			}
+		}
+	}
+	
+	/* method  showRank----------------------------------------------------------------------------------                                                                                                    
+	*顯示輸入學號在系統中總成績之排名
+	*
+	* @param id 個人學號
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.利用迴圈尋找成績系統list中學號相同者
+	*2.將該grades的總成績傳入getRank()獲得排名
+	*3.螢幕顯示排名
+    *
+	* Time estimate : O (n)
+	* Example: showRnak(103062319) 螢幕顯示該學號之排名
+	----------------------------------------------------------------------------------------------------------*/
+	public void showRank(int id){
+		for (int i = 0; i < gradeList.size(); i++) {
+			if(gradeList.get(i).getID() == id){
+				int g = gradeList.get(i).getTotalGrade();
+				System.out.println("Rank: "+ getRank(g));
+			}
+		}
+	}
+	
+	/* method  getRank----------------------------------------------------------------------------------                                                                                                    
+	* 根據總成績計算排名
+	*
+	* @param myGrade 總成績
+	* @return r 排名
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.利用迴圈比較總成績,起始r = 1,大於myGrade者使r+1(排名倒退)
+    *2.回傳r
+    *
+	* Time estimate : O (n)
+	* Example: getRank(80) 回傳80分在成績系統中之排名
+	----------------------------------------------------------------------------------------------------------*/
+	private int getRank(int myGrade){
+		int r = 1;
+		for (int i = 0; i < gradeList.size(); i++) {
+			if(gradeList.get(i).getTotalGrade() > myGrade)
+				r++;
+		}
+		return r;
+	}
+	
+	/* method  containsID----------------------------------------------------------------------------------                                                                                                    
+	* 檢查成績系統中是否存在該學號
+	*
+	* @param id 學號
+	* @return boolean值 存在與否
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.利用迴圈找出系統list中是否存在相同學號者
+    *2.回傳找到與否
+    *
+	* Time estimate : O (n)
+	* Example: containsID(103062319) 回傳false
+	----------------------------------------------------------------------------------------------------------*/
+	public boolean containsID(int id){
+		for (int i = 0; i < gradeList.size(); i++) {
+			if(gradeList.get(i).getID()==id)
+				return true;
+		}
+		return false;
+	}
+	
+	/* method  updateWeights----------------------------------------------------------------------------------                                                                                                    
+	* 更新比重重新計算系統中每個學生之總成績
+	*
+	* @param getNewWeight
+	* @return 無
+	*
+	* @throws ReweightException-輸入總和超過100或單筆高於100/小於0, 拋出ReweightException
+	*	
+	*Pseudo code:
+	*1.檢查新比重是否高於100或小於0
+	*2.檢查總和是否為100
+	*3.設定比重為新比重
+	*4.更新系統中每位學生之總成績
+    *
+	* Time estimate : O (n)
+	* Example: updateWeights([20,20,20,20,20]) 將各項成績比重更新為20%
+	----------------------------------------------------------------------------------------------------------*/
+	public void updateWeights (int [] getNewWeight){
+		int[] newWeights = getNewWeight;
+		int sum = 0;
+		try{
+			for(int i = 0; i < newWeights.length; i++){
+				sum += newWeights[i];
+				if(newWeights[i]>100 || newWeights[i]<0)
+					throw new ReweightException(0,newWeights[i]);
+			}
+			if(sum != 100)
+				throw new ReweightException(1,-1);
+			setNewWeights(newWeights);
+			for (int i = 0; i < gradeList.size(); i++) 
+				gradeList.get(i).updateTotalGrade(weights);
+			System.out.println("Weights change");
+		}
+		catch(ReweightException e){
+			e.ErrorDetect();
+		}
+		
+	}
+	
+	/* method  showOldWeights----------------------------------------------------------------------------------                                                                                                    
+	* 螢幕顯示更新前權重
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.取得系統目前之各項成績權重
+    *2.螢幕以百分比顯示各項成績權重
+    *
+	* Time estimate : O (1)
+	* Example: showOldWeights() 顯示當前權重
+	----------------------------------------------------------------------------------------------------------*/
+	public void showOldWeights(){
+		System.out.println("---Old Weights(%)---");
+		System.out.println("Lab1: " + (int)(weights[0]*100) +"%");
+		System.out.println("Lab2: " + (int)(weights[1]*100)+"%");
+		System.out.println("Lab3: " + (int)(weights[2]*100) +"%");
+		System.out.println("midTerm: " + (int)(weights[3]*100) +"%");
+		System.out.println("finalExam: " + (int)(weights[4]*100) +"%");
+	}
+	
+	/* method  setNewWeights----------------------------------------------------------------------------------                                                                                                    
+	* 設定系統新權重
+	*
+	* @param newWeights 新權重(百分比)
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.設定各項成績權重
+    *
+	* Time estimate : O (1)
+	* Example: setNewWeights([20,20,20,20,20]) 將系統各項成績新權重設為20%
+	----------------------------------------------------------------------------------------------------------*/
+	private void setNewWeights(int[] newWeights){
+		weights[0] = (float)newWeights[0]/100;
+		weights[1] = (float)newWeights[1]/100;
+		weights[2] = (float)newWeights[2]/100;
+		weights[3] = (float)newWeights[3]/100;
+		weights[4] = (float)newWeights[4]/100;
+		return;
+	}
+	
+	/* method findNameByID----------------------------------------------------------------------------------                                                                                                    
+	* 根據傳入之學號回傳該學生之名字
+	*
+	* @param id 學號
+	* @return gradeList.get(i).getName() 名字
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.利用迴圈尋找系統中該學號對應的名字並回傳
+    *
+	* Time estimate : O (n)
+	* Example: findNameByID(103062319) 回傳JSharp
+	----------------------------------------------------------------------------------------------------------*/
+	public String findNameByID(int id){
+		for (int i = 0; i < gradeList.size(); i++) {
+			if(gradeList.get(i).getID()==id)
+				return gradeList.get(i).getName();
+		}
+		return null;
+	}
+	
+	/* method  showAverage----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param
+	* @return 
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O ()
+	* Example: 
+	----------------------------------------------------------------------------------------------------------*/
+	public void showAverage(){
+		float lab1_sum = 0, lab2_sum = 0, lab3_sum = 0, midTerm_sum = 0, finalExam_sum = 0, total_sum = 0;
+		for (int i = 0; i < gradeList.size(); i++) {
+			int[] grades = gradeList.get(i).getGrades();
+			lab1_sum += grades[0];
+			lab2_sum += grades[1];
+			lab3_sum += grades[2];
+			midTerm_sum += grades[3];
+			finalExam_sum += grades[4];
+			total_sum += gradeList.get(i).getTotalGrade();
+		}
+		System.out.printf("Average:\nLab1 :%.2f\nLab2 :%.2f\nLab3 :%.2f\nmidTerm :%.2f\nfinalExam :%.2f\ntotalGrade :%.2f\n",lab1_sum/gradeList.size(),lab2_sum/gradeList.size(),lab3_sum/gradeList.size(),midTerm_sum/gradeList.size(),finalExam_sum/gradeList.size(),total_sum/gradeList.size());
+	}
+}

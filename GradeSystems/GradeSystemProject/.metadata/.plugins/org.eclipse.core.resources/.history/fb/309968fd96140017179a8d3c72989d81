@@ -1,0 +1,26 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class CommandExceptionTest {
+	CommandException ce =null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	@Before
+	public void setUp() throws Exception {
+		ce =new CommandException();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testCommandError1() {
+		assertEquals(,)
+	}
+
+}

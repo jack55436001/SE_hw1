@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="src" size="1869,1710" id="" metadata="uml2-1.0" initialized="true" zoom="12.0" scrolledX="-324" scrolledY="8993" tag="10" key="32303037303533312D313020477261646553797374656D50726F6A656374">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.2 //@children.3/@sourceConnections.0" name="ReweightException" location="1401,364" size="134,85" id="/ReweightException">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="103,36">
+      <children xsi:type="editmodel:MethodEditModel" name="ErrorDetect" id="/ReweightException#ErrorDetect()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ReweightException" id="/ReweightException#ReweightException(II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/ReweightException@re+/ReweightExceptionTest@" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="re" location="124,0" id="/ReweightException@re+/ReweightExceptionTest@|/ReweightException#re" attachSource="true" multiplicityLabel="//@children.0/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ re" location="1500,347" size="18,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1532,347" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,111" id="/ReweightException@re+/ReweightExceptionTest@|/ReweightExceptionTest#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/ReweightException@re2+/ReweightExceptionTest@" source="//@children.0" target="//@children.3" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="re2" location="68,0" id="/ReweightException@re2+/ReweightExceptionTest@|/ReweightException#re2" attachSource="true" multiplicityLabel="//@children.0/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ re2" location="1438,347" size="24,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1476,347" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,91" id="/ReweightException@re2+/ReweightExceptionTest@|/ReweightExceptionTest#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.1 //@children.6/@sourceConnections.0 //@children.2/@sourceConnections.0" name="UI" location="735,796" size="124,211" id="/UI">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,162">
+      <children xsi:type="editmodel:MethodEditModel" name="UI" id="/UI#UI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkID" id="/UI#checkID(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="finalize" id="/UI#finalize()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="login" id="/UI#login()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptCommand" id="/UI#promptCommand(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptID" id="/UI#promptID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showFinishMsg" id="/UI#showFinishMsg()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showNewWeights" id="/UI#showNewWeights([I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showWelcomeMsg" id="/UI#showWelcomeMsg(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/UI@ui+/UITest@" source="//@children.1" target="//@children.6" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="ui" location="124,106" id="/UI@ui+/UITest@|/UI#ui" attachSource="true" multiplicityLabel="//@children.1/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - ui" location="866,885" size="16,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="866,909" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,103" id="/UI@ui+/UITest@|/UITest#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/UI->/IdException*/UI->/IdException*/UI->/IdException*/UI-Soyatec::Import->/IdException" source="//@children.1" target="//@children.5" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="13,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,85"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/UI->/CommandException*/UI->/CommandException*/UI->/CommandException*/UI-Soyatec::Import->/CommandException" source="//@children.1" target="//@children.12" targetEnd="//@children.1/@sourceConnections.2/@children.2" label="//@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,187" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,23"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/UI->/GradeSystems*/UI->/GradeSystems*/UI-Soyatec::Import->/GradeSystems" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.3/@children.2" label="//@children.1/@sourceConnections.3/@children.0" sourceEnd="//@children.1/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="124,90" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,121"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GradeSystemProject" location="716,1218" size="141,67" id="/GradeSystemProject">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="47,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="/GradeSystemProject#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/GradeSystemProject->/UI*/GradeSystemProject->/UI*/GradeSystemProject-Soyatec::Import->/UI" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,211"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.0/@sourceConnections.1" name="ReweightExceptionTest" location="1632,50" size="154,121" id="/ReweightExceptionTest">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,72">
+      <children xsi:type="editmodel:MethodEditModel" name="setUp" id="/ReweightExceptionTest#setUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tearDown" id="/ReweightExceptionTest#tearDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testErrorDetect1" id="/ReweightExceptionTest#testErrorDetect1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testErrorDetect2" id="/ReweightExceptionTest#testErrorDetect2()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/ReweightExceptionTest->/ReweightException*/ReweightExceptionTest->/ReweightException*/ReweightExceptionTest-Soyatec::Import->/ReweightException" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,115" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="144,10"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.5/@sourceConnections.1" name="IdExceptionTest" location="316,117" size="119,121" id="/IdExceptionTest">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,72">
+      <children xsi:type="editmodel:MethodEditModel" name="setUp" id="/IdExceptionTest#setUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tearDown" id="/IdExceptionTest#tearDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testIdNotFound1" id="/IdExceptionTest#testIdNotFound1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testIdNotFound2" id="/IdExceptionTest#testIdNotFound2()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/IdExceptionTest->/IdException*/IdExceptionTest->/IdException*/IdExceptionTest-Soyatec::Import->/IdException" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,121" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="17,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1 //@children.4/@sourceConnections.0" name="IdException" location="545,425" size="99,85" id="/IdException">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="74,36">
+      <children xsi:type="editmodel:MethodEditModel" name="IdException" id="/IdException#IdException(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="IdNotFound" id="/IdException#IdNotFound()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/IdException@ie2+/IdExceptionTest@" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="ie2" location="0,5" id="/IdException@ie2+/IdExceptionTest@|/IdException#ie2" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ ie2" location="515,437" size="23,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="532,413" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="85,121" id="/IdException@ie2+/IdExceptionTest@|/IdExceptionTest#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/IdException@ie+/IdExceptionTest@" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="ie" location="51,0" id="/IdException@ie+/IdExceptionTest@|/IdException#ie" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ ie" location="603,408" size="17,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="573,408" size="16,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="119,116" id="/IdException@ie+/IdExceptionTest@|/IdExceptionTest#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="UITest" location="942,799" size="146,355" id="/UITest">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,306">
+      <children xsi:type="editmodel:MethodEditModel" name="set" id="/UITest#set()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setBefore" id="/UITest#setBefore()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tearDown" id="/UITest#tearDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testCheckID1" id="/UITest#testCheckID1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testCheckID2" id="/UITest#testCheckID2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testLogin1" id="/UITest#testLogin1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testLogin2" id="/UITest#testLogin2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testPromptCommand1" id="/UITest#testPromptCommand1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testPromptCommand2" id="/UITest#testPromptCommand2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testPromptID1" id="/UITest#testPromptID1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testPromptID2" id="/UITest#testPromptID2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowFinishMsg1" id="/UITest#testShowFinishMsg1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowFinishMsg2" id="/UITest#testShowFinishMsg2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowNewWeights1" id="/UITest#testShowNewWeights1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowNewWeights2" id="/UITest#testShowNewWeights2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowWelcomeMsg1" id="/UITest#testShowWelcomeMsg1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowWelcomeMsg2" id="/UITest#testShowWelcomeMsg2()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/UITest->/UI*/UITest->/UI*/UITest-Soyatec::Import->/UI" source="//@children.6" target="//@children.1" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,107" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="124,133"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.0 //@children.8/@sourceConnections.3" name="Grades" location="1453,1147" size="121,157" id="/Grades">
+    <children xsi:type="editmodel:CompartmentEditModel" size="77,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="/Grades#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="totalGrade" id="/Grades#totalGrade"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Grades" id="/Grades#Grades(ILjava.lang.String;IIIII[F)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGrades" id="/Grades#getGrades()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getID" id="/Grades#getID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateTotalGrade" id="/Grades#updateTotalGrade([F)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Grades@gd2+/GradesTest@" source="//@children.7" target="//@children.10" targetEnd="//@children.7/@sourceConnections.0/@children.2" label="//@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gd2" location="121,147" id="/Grades@gd2+/GradesTest@|/Grades#gd2" attachSource="true" multiplicityLabel="//@children.7/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ gd2" location="1581,1277" size="26,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1581,1301" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" id="/Grades@gd2+/GradesTest@|/GradesTest#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Grades@gd+/GradesTest@" source="//@children.7" target="//@children.10" targetEnd="//@children.7/@sourceConnections.1/@children.2" label="//@children.7/@sourceConnections.1/@children.0" sourceEnd="//@children.7/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gd" location="88,157" id="/Grades@gd+/GradesTest@|/Grades#gd" attachSource="true" multiplicityLabel="//@children.7/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ gd" location="1513,1311" size="21,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1548,1311" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,5" id="/Grades@gd+/GradesTest@|/GradesTest#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Grades@gradeList+/GradeSystems@" source="//@children.7" target="//@children.8" targetEnd="//@children.7/@sourceConnections.2/@children.2" label="//@children.7/@sourceConnections.2/@children.0" sourceEnd="//@children.7/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gradeList" location="10,0" id="/Grades@gradeList+/GradeSystems@|/Grades#gradeList" attachSource="true" multiplicityLabel="//@children.7/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - gradeList" location="1470,1130" size="47,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1451,1130" size="5,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="125,201" id="/Grades@gradeList+/GradeSystems@|/GradeSystems#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.2 //@children.9/@sourceConnections.0 //@children.1/@sourceConnections.3" name="GradeSystems" location="1239,765" size="125,211" id="/GradeSystems">
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="weights" id="/GradeSystems#weights"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="94,144">
+      <children xsi:type="editmodel:MethodEditModel" name="GradeSystems" id="/GradeSystems#GradeSystems()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="containsID" id="/GradeSystems#containsID(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="findNameByID" id="/GradeSystems#findNameByID(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showAverage" id="/GradeSystems#showAverage()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showGrade" id="/GradeSystems#showGrade(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showOldWeights" id="/GradeSystems#showOldWeights()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showRank" id="/GradeSystems#showRank(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateWeights" id="/GradeSystems#updateWeights([I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/GradeSystems@gs+/GradeSystemsTest@" source="//@children.8" target="//@children.9" targetEnd="//@children.8/@sourceConnections.0/@children.2" label="//@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gs" location="125,105" id="/GradeSystems@gs+/GradeSystemsTest@|/GradeSystems#gs" attachSource="true" multiplicityLabel="//@children.8/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.8/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ gs" location="1371,853" size="20,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1371,877" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,127" id="/GradeSystems@gs+/GradeSystemsTest@|/GradeSystemsTest#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/GradeSystems@gradeSystems+/UI@" source="//@children.8" target="//@children.1" targetEnd="//@children.8/@sourceConnections.1/@children.2" label="//@children.8/@sourceConnections.1/@children.0" sourceEnd="//@children.8/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gradeSystems" location="0,94" id="/GradeSystems@gradeSystems+/UI@|/GradeSystems#gradeSystems" attachSource="true" multiplicityLabel="//@children.8/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.8/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - gradeSystems" location="1166,842" size="66,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="1226,866" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="124,70" id="/GradeSystems@gradeSystems+/UI@|/UI#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/GradeSystems->/ReweightException*/GradeSystems->/ReweightException*/GradeSystems->/ReweightException*/GradeSystems-Soyatec::Import->/ReweightException" source="//@children.8" target="//@children.0" targetEnd="//@children.8/@sourceConnections.2/@children.2" label="//@children.8/@sourceConnections.2/@children.0" sourceEnd="//@children.8/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="100,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="52,85"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/GradeSystems->/Grades*/GradeSystems->/Grades*/GradeSystems-Soyatec::Import->/Grades" source="//@children.8" target="//@children.7" targetEnd="//@children.8/@sourceConnections.3/@children.2" label="//@children.8/@sourceConnections.3/@children.0" sourceEnd="//@children.8/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="120,211" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,17"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.0" name="GradeSystemsTest" location="1618,743" size="139,337" id="/GradeSystemsTest">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,288">
+      <children xsi:type="editmodel:MethodEditModel" name="setUp" id="/GradeSystemsTest#setUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tearDown" id="/GradeSystemsTest#tearDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testContainsID1" id="/GradeSystemsTest#testContainsID1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testContainsID2" id="/GradeSystemsTest#testContainsID2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testFindNameByID1" id="/GradeSystemsTest#testFindNameByID1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testFindNameByID2" id="/GradeSystemsTest#testFindNameByID2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowAverage1" id="/GradeSystemsTest#testShowAverage1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowAverage2" id="/GradeSystemsTest#testShowAverage2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowGrade1" id="/GradeSystemsTest#testShowGrade1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowGrade2" id="/GradeSystemsTest#testShowGrade2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowOldWeights1" id="/GradeSystemsTest#testShowOldWeights1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowOldWeights2" id="/GradeSystemsTest#testShowOldWeights2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowRank1" id="/GradeSystemsTest#testShowRank1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testShowRank2" id="/GradeSystemsTest#testShowRank2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testUpdateWeights1" id="/GradeSystemsTest#testUpdateWeights1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testUpdateWeights2" id="/GradeSystemsTest#testUpdateWeights2()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/GradeSystemsTest->/GradeSystems*/GradeSystemsTest-Soyatec::Access->/GradeSystems*/GradeSystemsTest->/GradeSystems*/GradeSystemsTest-Soyatec::Import->/GradeSystems" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.2" label="//@children.9/@sourceConnections.0/@children.0" sourceEnd="//@children.9/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Access»" size="71,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,107" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="125,78"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0 //@children.7/@sourceConnections.1" name="GradesTest" location="1706,1443" size="143,247" id="/GradesTest">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,198">
+      <children xsi:type="editmodel:MethodEditModel" name="setUp" id="/GradesTest#setUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetGrades1" id="/GradesTest#testGetGrades1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetGrades2" id="/GradesTest#testGetGrades2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetID1" id="/GradesTest#testGetID1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetID2" id="/GradesTest#testGetID2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetName1" id="/GradesTest#testGetName1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetName2" id="/GradesTest#testGetName2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetTotalGrade1" id="/GradesTest#testGetTotalGrade1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testGetTotalGrade2" id="/GradesTest#testGetTotalGrade2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testUpdateTotalGrade1" id="/GradesTest#testUpdateTotalGrade1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testUpdateTotalGrade2" id="/GradesTest#testUpdateTotalGrade2()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/GradesTest->/Grades*/GradesTest-Soyatec::Import->/Grades" source="//@children.10" target="//@children.7" targetEnd="//@children.10/@sourceConnections.0/@children.2" label="//@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="30,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="121,120"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.0" name="CommandExceptionTest" location="50,1163" size="158,121" id="/CommandExceptionTest">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="108,72">
+      <children xsi:type="editmodel:MethodEditModel" name="setUp" id="/CommandExceptionTest#setUp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tearDown" id="/CommandExceptionTest#tearDown()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testCommandError1" id="/CommandExceptionTest#testCommandError1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testCommandError2" id="/CommandExceptionTest#testCommandError2()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="/CommandExceptionTest->/CommandException*/CommandExceptionTest->/CommandException*/CommandExceptionTest-Soyatec::Import->/CommandException" source="//@children.11" target="//@children.12" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="38,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="158,4" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="8,85"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.0 //@children.1/@sourceConnections.2" name="CommandException" location="374,960" size="139,85" id="/CommandException">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,36">
+      <children xsi:type="editmodel:MethodEditModel" name="CommandError" id="/CommandException#CommandError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="CommandException" id="/CommandException#CommandException()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/CommandException@ce+/CommandExceptionTest@" source="//@children.12" target="//@children.11" targetEnd="//@children.12/@sourceConnections.0/@children.2" label="//@children.12/@sourceConnections.0/@children.0" sourceEnd="//@children.12/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,10" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="ce" location="0,63" id="/CommandException@ce+/CommandExceptionTest@|/CommandException#ce" attachSource="true" multiplicityLabel="//@children.12/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.12/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ ce" location="347,1006" size="20,10" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="361,1030" size="6,10" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="143,0" id="/CommandException@ce+/CommandExceptionTest@|/CommandExceptionTest#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

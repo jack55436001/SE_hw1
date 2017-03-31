@@ -1,0 +1,106 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ReweightExceptionTest {
+	/**
+	 * @uml.property  name="re"
+	 * @uml.associationEnd  
+	 */
+	ReweightException re = null;
+	/**
+	 * @uml.property  name="re2"
+	 * @uml.associationEnd  
+	 */
+	ReweightException re2 =null;
+	/**
+	 * @uml.property  name="outContent"
+	 */
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化,創建兩種ReweightException並且setOut content做之後console比對
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.創建re,re2分別使用不同參數
+	*2.將outContent set完畢
+    *
+	* Time estimate : O (1)
+	* Example:ReweightExceptionTest.setUp()   測試setUp
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		re = new ReweightException(0,120);
+		re2 = new ReweightException(1,80);
+		System.setOut(new PrintStream(outContent));
+	}
+
+	/* method  tearDown----------------------------------------------------------------------------------                                                                                                    
+	* 關閉console output
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將console output設為null
+    *
+	* Time estimate : O (1)
+	* Example:ReweightExceptionTest.tearDown()   測試完畢關閉console output
+	----------------------------------------------------------------------------------------------------------*/
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	/* method  testErrorDetect1----------------------------------------------------------------------------------                                                                                                    
+	* 測試re之ErrorDetect,輸入百分比超過範圍
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫ErrorDetect(),利用assertEquals比較預期和outContent.toString()兩者是否相同
+    *
+	* Time estimate : O (1)
+	* Example:ReweightExceptionTest.testErrorDetect1()   測試testErrorDetect1
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testErrorDetect1() {
+		re.ErrorDetect();
+		assertEquals("120 should be 0 to 100.\n",outContent.toString());
+	}
+	
+	/* method  testErrorDetect2----------------------------------------------------------------------------------                                                                                                    
+	* 測試re2之ErrorDetect,比重百分比總合不為一百
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.呼叫ErrorDetect(),利用assertEquals比較預期和outContent.toString()兩者是否相同
+    *
+	* Time estimate : O (1)
+	* Example:ReweightExceptionTest.testErrorDetect2()   測試testErrorDetect2
+	----------------------------------------------------------------------------------------------------------*/
+	@Test
+	public void testErrorDetect2() {
+		re2.ErrorDetect();
+		assertEquals("The sum over all weights should be 100.\n",outContent.toString());
+	}
+}

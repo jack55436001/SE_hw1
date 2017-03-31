@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="IntegrationTest2" project="GradeSystemProject" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="IntegrationTest2" time="0.002">
+    <testcase name="testGradeSystemProject" classname="IntegrationTest2" time="0.002">
+      <failure>
+        <expected>請輸入ID 或 輸入Q離開：
+歡迎 楊永成
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Lab1: 85
+Lab2: 90
+Lab3: 82
+mid-term: 93
+final exam: 85
+total grade: 88
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Rank: 37
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Average:
+Lab1 :90.32
+Lab2 :87.71
+Lab3 :89.10
+midTerm :89.52
+finalExam :89.73
+totalGrade :89.57
+
+請輸入 Ｅ 回到主選單
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+---Old Weights(%)---
+Lab1: 10%
+Lab2: 10%
+Lab3: 10%
+mid-term: 30%
+final exam: 40%
+---New Weights(%)---
+Lab1: 
+Lab2: 
+Lab3: 
+midTerm: 
+finalExam: 
+---Confirm New Weights(%)---
+Lab1: 20%
+Lab2: 20%
+Lab3: 20%
+midTerm: 20%
+finalExam: 20%
+以上正確嗎? Y (Yes) 或 N (No)
+Weights changed!
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Rank: 50
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+請輸入ID 或 輸入Q離開：
+謝謝使用本系統
+</expected>
+        <actual>請輸入ID 或 輸入Q離開：
+歡迎 楊永成
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Lab1: 85
+Lab2: 90
+Lab3: 82
+mid-term: 93
+final exam: 85
+total grade: 88
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Rank: 37
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Average:
+Lab1 :90.32
+Lab2 :87.71
+Lab3 :89.10
+midTerm :89.52
+finalExam :89.73
+totalGrade :89.57
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+---Old Weights(%)---
+Lab1: 10%
+Lab2: 10%
+Lab3: 10%
+mid-term: 30%
+final exam: 40%
+---New Weights(%)---
+Lab1: 
+Lab2: 
+Lab3: 
+midTerm: 
+finalExam: 
+---Confirm New Weights(%)---
+Lab1: 20%
+Lab2: 20%
+Lab3: 20%
+midTerm: 20%
+finalExam: 20%
+以上正確嗎? Y (Yes) 或 N (No)
+Weights changed!
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+Rank: 50
+請輸入 Ｅ 回到主選單
+
+輸入指令
+1) G 顯示成績 (Grade)
+2) R 顯示排名 (Rank)
+3) A 顯示平均 (Average)
+4) W 更新配分 (Weight)
+5) E 離開選單 (Exit)
+請輸入ID 或 輸入Q離開：
+謝謝使用本系統
+</actual>org.junit.ComparisonFailure: expected:&lt;...3
+totalGrade :89.57
+[
+請輸入 Ｅ 回到主選單]
+輸入指令
+1) G 顯示成績 (Gra...&gt; but was:&lt;...3
+totalGrade :89.57
+[請輸入 Ｅ 回到主選單
+]
+輸入指令
+1) G 顯示成績 (Gra...&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at IntegrationTest2.testGradeSystemProject(IntegrationTest2.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+  </testsuite>
+</testrun>

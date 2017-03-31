@@ -1,0 +1,28 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class GradeSystemProjectTest {
+
+	@Before
+	public void setUp() throws Exception {
+		String input = "103062319";
+	    InputStream in = new ByteArrayInputStream(input.getBytes());
+	    System.setIn(in);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testLogin() {
+		assertEquals(0,GradeSystemProject.login());
+	}
+
+}

@@ -1,0 +1,66 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class IntegrationTest2 {
+
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	
+	/* method  setUp----------------------------------------------------------------------------------                                                                                                    
+	* 初始化UI,setOut content做之後console比對,setIn content用於模擬使用者輸入
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.利用counter選擇需要的test input,並且setIn test input
+	*2.將outContent set完畢
+	*3.創建一個UI
+    *
+	* Time estimate : O (1)
+	* Example:IntegrationTest.set()   創建UI,設定相關input output參數
+	----------------------------------------------------------------------------------------------------------*/
+	@Before
+	public void setUp() throws Exception {
+		String input = "";
+		
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+	    System.setIn(in);
+	    System.setOut(new PrintStream(outContent));
+	}
+
+	/* method  tearDown----------------------------------------------------------------------------------                                                                                                    
+	* 關閉console output
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws Exception
+	*	
+	*Pseudo code:
+	*1.將console output設為null
+    *
+	* Time estimate : O (1)
+	* Example:IntegrationTest.tearDown()   測試完畢關閉console output
+	----------------------------------------------------------------------------------------------------------*/
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+	
+	@Test
+	public void testGradeSystemProject(){
+		
+	}
+
+}

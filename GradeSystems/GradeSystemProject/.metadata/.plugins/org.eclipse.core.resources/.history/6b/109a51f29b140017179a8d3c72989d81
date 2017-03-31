@@ -1,0 +1,31 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ReweightExceptionTest {
+	ReweightException re = null;
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+	@Before
+	public void setUp() throws Exception {
+		re = new ReweightException(0,120);
+		System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testErrorDetect1() {
+		re.ErrorDetect();
+		assertEquals("",);
+	}
+
+}

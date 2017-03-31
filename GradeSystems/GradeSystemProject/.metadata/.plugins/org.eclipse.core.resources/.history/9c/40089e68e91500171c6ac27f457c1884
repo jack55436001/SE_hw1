@@ -1,0 +1,87 @@
+
+public class ReweightException extends Exception{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3L;
+	private int id;
+	private int percent;
+	
+	/* method  ReweightException----------------------------------------------------------------------------------                                                                                                    
+	* ReweightException建構子
+	*
+	* @param id 錯誤代碼 percent 輸入錯誤之百分比
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.儲存相對應的變數
+    *
+	* Time estimate : O (1)
+	* Example: e = new ReweightException(0,120)  儲存相對應的變數
+	----------------------------------------------------------------------------------------------------------*/
+	public ReweightException(int id, int percent){
+		super();
+		this.id = id;
+		this.percent = percent;
+	}
+	
+	/* method  ErrorDetect----------------------------------------------------------------------------------                                                                                                    
+	* 判斷是哪一種錯誤
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.判斷是哪一種錯誤,並且呼叫相對應之method
+    *
+	* Time estimate : O (1)
+	* Example: e.ErrorDetect()  呼叫相對應之錯誤處理method
+	----------------------------------------------------------------------------------------------------------*/
+	public void ErrorDetect(){
+		if(id==0)
+			outOfrange();
+		else
+			sumError();
+	}
+	
+	/* method  outOfrange----------------------------------------------------------------------------------                                                                                                    
+	* 顯示輸入範圍錯誤
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.顯示輸入錯誤與輸入範圍錯誤
+    *
+	* Time estimate : O (1)
+	* Example: outOfrange()  顯示輸入範圍錯誤
+	----------------------------------------------------------------------------------------------------------*/
+	private void outOfrange(){
+		System.out.println(percent+" should be 0 to 100.");
+	}
+	
+	/* method  sumError----------------------------------------------------------------------------------                                                                                                    
+	* 顯示權重加總錯誤
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.顯示權重加總錯誤
+    *
+	* Time estimate : O (1)
+	* Example: sumError()  顯示權重加總錯誤
+	----------------------------------------------------------------------------------------------------------*/
+	private void sumError(){
+		System.out.println("The sum over all weights should be 100.");
+	}
+}

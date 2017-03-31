@@ -1,0 +1,44 @@
+
+public class CommandException extends Exception{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
+	
+	/* method  CommandException----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param 無
+	* @return 無
+	*
+	* @throws 無
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O ()
+	* Example:
+	----------------------------------------------------------------------------------------------------------*/
+	public CommandException(){
+		super();
+	}
+	
+	/* method  ----------------------------------------------------------------------------------                                                                                                    
+	* 
+	*
+	* @param 
+	* @return 
+	*
+	* @throws 
+	*	
+	*Pseudo code:
+	*1.
+    *
+	* Time estimate : O ()
+	* Example:
+	----------------------------------------------------------------------------------------------------------*/
+	public void CommandError(){
+		System.out.println("Command Error(EX:若要顯示成績請輸入Ｇ)");
+	}
+}

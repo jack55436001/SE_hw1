@@ -1,0 +1,34 @@
+import static org.junit.Assert.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class IntegrationTest {
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+	@Before
+	public void setUp() throws Exception {
+		String input="962001044\nG\nE\nE\nQ\n";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+	    System.setIn(in);
+	    System.setOut(new PrintStream(outContent));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		System.setOut(null);
+	}
+
+	@Test
+	public void testGrade() {
+		GradeSystemProject.main(null);
+		assertEquals("請輸入ID 或 輸入Q離開：\n歡迎 凌宗廷\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\nLab1: 87\nLab2: 86\nLab3: 98\nmid-term: 88\nfinal exam: 87\ntotal grade: 88\n請輸入 Ｅ 回到主選單\n\n輸入指令\n1) G 顯示成績 (Grade)\n2) R 顯示排名 (Rank)\n3) A 顯示平均 (Average)\n4) W 更新配分 (Weight)\n5) E 離開選單 (Exit)\n請輸入ID 或 輸入Q離開：\n謝謝使用本系統",outContent);
+	}
+
+}

@@ -1,0 +1,58 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class GradesTest {
+	Grades gd = null;
+	Grades gd2 = null;
+	@Before
+	public void setUp() throws Exception {
+		gd = new Grades(103062319, "JSharp", 30, 40, 50, 60, 70, new float[] { 0.2f, 0.2f, 0.2f, 0.2f, 0.2f });
+		gd2 = new Grades(103062320, "CSharp", 100, 100, 50, 60, 70, new float[] { 0.2f, 0.2f, 0.2f, 0.2f, 0.2f });
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+	
+	
+	@Test
+	public void testGetTotalGrade1() {
+		assertEquals(50,gd.getTotalGrade());
+	}
+	@Test
+	public void testGetTotalGrade2() {
+		assertEquals(76,gd2.getTotalGrade());
+	}
+
+	@Test
+	public void testUpdateTotalGrade1() {
+		gd2.updateTotalGrade(new float[] {0.1f,0.1f,0.1f,0.1f,0.6f});
+		assertEquals(73,gd2.getTotalGrade());
+	}
+	@Test
+	public void testUpdateTotalGrade2() {
+		gd2.updateTotalGrade(new float[] {0.1f,0.1f,0.1f,0.1f,0.6f});
+		assertEquals(73,gd2.getTotalGrade());
+	}
+	@Test
+	public void testGetID1(){
+		assertEquals(103062319,gd.getID());
+	}
+	@Test
+	public void testGetID2(){
+		assertEquals(103062320,gd2.getID());
+	}
+	@Test
+	public void TestGetGrades1(){
+		Assert.assertArrayEquals( new int[]{30, 40, 50, 60, 70}, gd.getGrades() );
+	}
+	@Test
+	public void TestGetGrades2(){
+		Assert.assertArrayEquals( new int[]{100, 100, 50, 60, 70}, gd2.getGrades() );
+	}
+}

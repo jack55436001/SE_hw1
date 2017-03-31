@@ -1,0 +1,23 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class CommandExceptionTest {
+	CommandException ce =null;
+	@Before
+	public void setUp() throws Exception {
+		ce =new CommandException();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testCommandError() {
+		fail("Not yet implemented");
+	}
+
+}
